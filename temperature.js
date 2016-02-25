@@ -2,25 +2,24 @@
 function calculate() {
   var result;
   var temp = original.value;
-  var regexp = /([-+]?\d+(?:\.\d*)?)\s*([fFcC])/;
-  
+  var regexp = /^([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)\s*(([cC](|[e]?|[el]?|[elc]?|[elci]?|[elciu]?|[elcius]?))|([fF]([a]?|[ar]?|[aren]?|[arenh]?|[arenh]?|[arenhe]?|[arenhei]?|[arenheit])))/;
   var m = temp.match(regexp);
-  
+
   if (m) {
     var num = m[1];
     var type = m[2];
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
       result = (num * 9/5)+32;
-      result = result.toFixed(1)+" ºF"
+      result = result.toFixed(1)+" Farenheit"
     }
     else {
       result = (num - 32)*5/9;
-      result = result.toFixed(1)+" ºC"
+      result = result.toFixed(1)+" Celsius"
     }
     converted.innerHTML = result;
   }
   else {
-    converted.innerHTML = "¡ERROR! Try something like '-4.2C' instead";
+    converted.innerHTML = "ERROR! Try something like '-4.2C,4F,50e1F,50F' instead";
   }
 }
