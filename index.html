@@ -3,22 +3,31 @@
   <head>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
      <title>JavaScript Temperature Converter</title>
-     <link href="normalize.css" rel="stylesheet" type="text/css">
-     <link href="global.css" rel="stylesheet" type="text/css">
-
+     <link href="css/normalize.css" rel="stylesheet" type="text/css">
+     <link href="css/global.css" rel="stylesheet" type="text/css">
      <script type="text/javascript" src="temperature.js"></script>
   </head>
   <body>
-    <h1>Temperature Converter</h1>
-    <table>
-      <tr>
-        <th>Enter  Temperature (examples: 32F, 45C, -2.5f):</th>
-        <td><input id="original" autofocus onchange="calculate();" placeholder="32F" size="50"></td>
-      </tr>
-      <tr>
-        <th>Converted Temperature:</th>
-        <td><span class="output" id="converted"></span></td>
-      </tr>
-    </table>
+    <div id="wrapper"><!-- ENVOLTURA -->
+      <div id="title"><h1>Temperature Converter</h1></div>
+      <div class="row">
+        <div class="col-md-4" id="div-input">
+          <p id="title-input">Enter Temperature</p></br>
+          <p id="allowed-units" list-style-type="disc"> <b>UNITS ALLOWED</b> </br>
+              <ul id="list-allowed-units">
+                <li type="disc">Celsius (examples 32C or 45c)</li>
+                <li type="disc">Farenheit (examples 75F or 21f)</li>
+              </ul>
+          </p>
+          <HR id="horizontal-line" width=80% align="center">
+          <input id="original" autofocus onchange="calculate();" placeholder="32F">
+        </div>
+        <div id="flecha"></div>
+        <div class="col-md-4" id="div-output">
+          <p id="title-output">Converted Temperature</p></br>
+          <div id="div-converted"><span class="output" id="converted"></span></div>
+        </div>
+      </div>
+    </div> <!-- FIN ENVOLTURA --> 
   </body>
 </html>
